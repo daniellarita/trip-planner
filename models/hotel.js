@@ -8,6 +8,10 @@ const Hotel = db.define('hotel', {
   },
   num_stars: {
     type: Sequelize.INTEGER,
+    validate:{
+      min:1,
+      max:5
+    }
   },
   amenities:{
     type: Sequelize.STRING

@@ -16,7 +16,10 @@ app.engine('html', nunjucks.render); // when giving html files to res.render, te
 
 // Middleware
 // static files
-app.use(express.static('public'));
+app.use(express.static(__dirname+'/public'));
+// statically serve front-end dependencies
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 
 var db = require('./models');
 db.sync()
