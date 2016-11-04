@@ -30,16 +30,15 @@ const router=require('./routes')
 app.use('/',router)
 
 //catch 404 (i.e., no route was hit) and forward to error handler
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-//
-// // handle all errors (anything passed into `next()`)
-// app.use(function(err, req, res, next) {
-//   res.status(err.status || 500);
-//   console.error(err);
-//   res.send("Internal Server Error");
-// });
-// app.listen(3000)
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// handle all errors (anything passed into `next()`)
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  console.error(err);
+  res.send("Internal Server Error");
+});

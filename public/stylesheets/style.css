@@ -1,21 +1,24 @@
 .navbar{
-  background-color:red;
+  background-color:black;
+  margin:0px;
 }
 .container {
     padding:10px;
 }
-.col-md-8{
-  height:265px;
-}
-div{
-  font-size: 100%;
-}
 
 #gmap{
-  height:265px;
+  height:100%;
+  width:66%;
+  float:left;
+}
+
+.col-md-4{
+  float:left;
+  margin:0px;
+  height:50%;
 }
 
 
-.navbar-inverse .navbar-nav &gt; li &gt; a, .navbar-inverse .navbar-brand {
+/*.navbar-inverse .navbar-nav &gt; li &gt; a, .navbar-inverse .navbar-brand {
     color: $your-color-here;
-}
+}*/

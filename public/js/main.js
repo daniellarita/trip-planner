@@ -1,34 +1,37 @@
 // var $ = require('jQuery');
-// $(document).ready(function() {
-//     const mapElem=document.getElementById('gmap');
-//     const map=new Google.maps.Map(mapElem, {
-//       zoom:13
-//     });
-// });
-// console.log('here');
-
-function initialize_gmaps() {
-    // initialize new google maps LatLng object
-    var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
-    // set the map options hash
-    var mapOptions = {
-        center: myLatlng,
-        zoom: 16,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    // get the maps div's HTML obj
-    var map_canvas_obj = document.getElementById("gmap");
-    // initialize a new Google Map with the options
-    var map = new google.maps.Map(map_canvas_obj, mapOptions);
-    // Add the marker to the map
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        title:"Hello World!"
-    });
-    // Add the marker to the map by calling setMap()
-    marker.setMap(map);
-}
-
 $(document).ready(function() {
-    initialize_gmaps();
+    var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
+    const mapElem=document.getElementById('gmap');
+    const map=new google.maps.Map(mapElem, {
+      zoom:13,
+      mapTypeId:google.maps.MapTypeId.ROADMAP,
+      center:myLatlng
+    });
 });
+
+
+// function initialize_gmaps() {
+//     // initialize new google maps LatLng object
+//     var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
+//     // set the map options hash
+//     var mapOptions = {
+//         center: myLatlng,
+//         zoom: 16,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP
+//     };
+//     // get the maps div's HTML obj
+//     var map_canvas_obj = document.getElementById("gmap");
+//     // initialize a new Google Map with the options
+//     var map = new google.maps.Map(map_canvas_obj, mapOptions);
+//     // Add the marker to the map
+//     var marker = new google.maps.Marker({
+//         position: myLatlng,
+//         title:"Hello World!"
+//     });
+//     // Add the marker to the map by calling setMap()
+//     marker.setMap(map);
+// }
+//
+// $(document).ready(function() {
+//     initialize_gmaps();
+// });
