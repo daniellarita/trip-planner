@@ -14,65 +14,65 @@
     </div>
     <content class="row">
       <div id="gmap">
-        <map class="col-md-8">
+        <map class="col-md-8 col-xs-12">
         </map>
       </div>
-      <side class="col-md-4" style="background-color: orange;">
+      <side class="col-md-4 col-xs-12" style="background-color: orange;">
         <choose>
-          <hotel-choices>
+          <choices>
             <h3>Hotels</h3>
             <select>
               {% for hotel in hotels %}
               <option>{{hotel.name}}</option>
               {% endfor %}
             </select>
-            <button>+</button>
-          </hotel-choices>
-          <restaurant-choices>
+            <button class="pull-right btn-circle">+</button>
+          </choices>
+          <choices>
             <h3>Restaurants</h3>
             <select>
               {% for restaurant in restaurants %}
               <option>{{restaurant.name}}</option>
               {% endfor %}
             </select>
-            <button>+</button>
-          </restaurant-choices>
-          <activity-choices>
+            <button class="pull-right btn-circle">+</button>
+          </choices>
+          <choices>
             <h3>Activities</h3>
             <select>
               {% for activity in activities %}
               <option>{{activity.name}}</option>
               {% endfor %}
             </select>
-            <button>+</button>
-          </activity-choices>
+            <button class="pull-right btn-circle">+</button>
+          </choices>
         </choose>
       </side>
-      <side class="col-md-4" style="background-color: lightgray;">
+      <side class="col-md-4 col-xs-12" style="background-color: lightgray;">
         <span><h4>Day 1</h4></span>
-        <div style="background-color:lightblue"><span><button>1</button><button>2</button><button>3</button></span>
+        <div style="background-color:lightblue" class="mini-nav"><span><button>1</button><button>2</button><button>3</button><button>+</button></span>
         </div>
         <choose>
           <hotel-itinerary>
-            <h3>My Hotel</h3>
+            <h5>My Hotel</h5>
             <ul>
-              <li>
+              <li></li>
+              <button class="pull-right btn-circle">x</button>
             </ul>
-            <button>x</button>
           </hotel-itinerary>
           <restaurant-itinerary>
-            <h3>My Restaurants</h3>
+            <h5>My Restaurants</h5>
             <ul>
-              <li>
+              <li></li>
+              <button class="pull-right btn-circle">x</button>
             </ul>
-            <button>x</button>
           </restaurant-itinerary>
           <activity-itinerary>
-            <h3>My Activity</h3>
+            <h5>My Activity</h5>
             <ul>
-              <li>
+              <li></li>
+              <button class="pull-right btn-circle">x</button>
             </ul>
-            <button>x</button>
           </activity-itinerary>
         </choose>
       </side>
