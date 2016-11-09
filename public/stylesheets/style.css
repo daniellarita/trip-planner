@@ -34,3 +34,7 @@
 body{
   background-color:lightgrey;
 }
+
+.day-buttons .current-day {
+    background: #a8c9dd;
+    color: #736357; }

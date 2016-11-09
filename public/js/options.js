@@ -41,5 +41,5 @@ $(function() {
     var $iActivity=$('#my-itinerary #activity-choice .itinerary-item')
     .append([$('<li></li>').html($myActivity),$('<button>x</button><br>')])
   })
-
+  
 });
