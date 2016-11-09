@@ -6,6 +6,7 @@
     <script src="/bootstrap/js/bootstrap.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1glrTnpablmi4P5deOqFUHzQR5BbXwlk&sensor=true"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/options.js"></script>
   </head>
   <body>
     <div class="navbar">
@@ -17,65 +18,62 @@
         <map class="col-md-8 col-xs-12">
         </map>
       </div>
-      <side class="col-md-4 col-xs-12" style="background-color: orange;">
+      <side id="input-itinerary" class="col-md-4 col-xs-12">
         <choose>
-          <choices>
+          <choices class="hotel-add">
             <h3>Hotels</h3>
-            <select>
-              {% for hotel in hotels %}
-              <option>{{hotel.name}}</option>
-              {% endfor %}
+            <select id="hotel-choices">
+              <option></option>
             </select>
             <button class="pull-right btn-circle">+</button>
           </choices>
-          <choices>
+          <choices class="restaurant-add">
             <h3>Restaurants</h3>
-            <select>
-              {% for restaurant in restaurants %}
-              <option>{{restaurant.name}}</option>
-              {% endfor %}
+            <select id="restaurant-choices">
+              <option></option>
             </select>
             <button class="pull-right btn-circle">+</button>
           </choices>
-          <choices>
+          <choices class=activity-add>
             <h3>Activities</h3>
-            <select>
-              {% for activity in activities %}
-              <option>{{activity.name}}</option>
-              {% endfor %}
+            <select id="activity-choices">
+              <option></option>
             </select>
             <button class="pull-right btn-circle">+</button>
           </choices>
         </choose>
       </side>
-      <side class="col-md-4 col-xs-12" style="background-color: lightgray;">
-        <span><h4>Day 1</h4></span>
-        <div style="background-color:lightblue" class="mini-nav"><span><button>1</button><button>2</button><button>3</button><button>+</button></span>
+      <side id="my-itinerary" class="col-md-4 col-xs-12">
+        <span><h4 align="center">Day 1</h4></span>
+        <div class="mini-nav"><span><button>1</button><button>2</button><button>3</button><button>+</button></span>
         </div>
         <choose>
           <hotel-itinerary>
             <h5>My Hotel</h5>
-            <ul>
-              <li></li>
-              <button class="pull-right btn-circle">x</button>
+            <ul id="hotel-choice">
+              <div class="itinerary-item">
+              </div>
             </ul>
           </hotel-itinerary>
           <restaurant-itinerary>
             <h5>My Restaurants</h5>
-            <ul>
-              <li></li>
-              <button class="pull-right btn-circle">x</button>
+            <ul id="restaurant-choice">
+              <div class="itinerary-item"></div>
             </ul>
           </restaurant-itinerary>
           <activity-itinerary>
             <h5>My Activity</h5>
-            <ul>
-              <li></li>
-              <button class="pull-right btn-circle">x</button>
+            <ul id="activity-choice">
+              <div class="itinerary-item"></div>
             </ul>
           </activity-itinerary>
         </choose>
       </side>
     </content>
   </body>
+  <script>
+  var hotels = {{ hotels | dump | safe }};
+  var restaurants = {{ restaurants | dump | safe }};
+  var activities = {{ activities | dump | safe }};
+  </script>
 </html>

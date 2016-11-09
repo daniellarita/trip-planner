@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
+//
 // handle all errors (anything passed into `next()`)
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
